@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic Form</title>
+        <script src="./javascript/index.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<style>
+		td{
+			padding:10px;
+		}
+		.flex-container{
+		display:flex;
+		}
+		.fullheight{
+		flex-direction:row;
+		}
+		.dynamicForm{
+		background-color:white;
+		}
+		label{
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		.button-padding{
+		margin-left:20px;
+		}
+		</style>
+    </head>
+    <body>
+        <div class="container flex-container">
+            <div class="col-md-6 well fullheight">
+			<h3 class="text-center">Create Form</h3>
+            <div id="textFieldForm"></div>
+            <br> <br> <br>
+            <div class="dynamicForm well" >
+			<center><h4>Preview</h4></center>
+				<table>
+					<tbody id="form">
+					</tbody>
+				</table>
+			</div>
+            <form action="#">
+            <div><label>Form Name:</label><input id="form-name" type="text" required></div>
+            <button id="form-create" type="submit" onclick="createForm()">Create Form</button>
+            </form>
+			</div>
+			<div class="col-md-6 well fullheight">
+			<h3 class="text-center">Display Form</h3>
+            <div id="formListSectionContainer">
+			<select id="formListSelect">
+				<option value="" disabled selected>Select a Form</option>
+			</select>
+                    <button class="button-padding" id="form-display" type="submit" onclick="displayForm()">Display Form</button>
+            </div>
+			</div>
+        </div>
+    </body>
+</html>
