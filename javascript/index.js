@@ -130,12 +130,6 @@ function textFieldForm(type = "text") {
     document.getElementById("type").value = type;
 }
 
-window.onload = function() {
-    textFieldForm();
-	loadSavedForms();
-    displayFormList();
-};
-
 function loadSavedForms(){
 	   $('#form_list').html('<option value="" disabled selected>Select Form</option>');
         $.get('/getDetails', function (response) {
@@ -151,7 +145,7 @@ function getValueFromId(id, type) {
         let e = document.getElementById(id);
         return e.options[e.selectedIndex].value;
     }
-    return document.getElementById(id).value;
+    return document.getElementById(id) ? document.getElementById(id).value:"";
 }
 
 function generateDynamicField(inputJson) {
@@ -267,3 +261,9 @@ formsList.forEach(function(form){
     selectList.appendChild(option);
   });
 }
+
+window.onload = function() {
+    textFieldForm();
+	//loadSavedForms();
+    displayFormList();
+};
